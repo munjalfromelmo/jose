@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 /**
  * Class PublicJWKSet.
@@ -19,14 +19,14 @@ final class PublicJWKSet extends BaseJWKSet implements JWKSetInterface
     use JWKSetPEM;
 
     /**
-     * @var \Jose\Object\JWKSetInterface
+     * @var \Jose\Objects\JWKSetInterface
      */
     private $jwkset;
 
     /**
      * PublicJWKSet constructor.
      *
-     * @param \Jose\Object\JWKSetInterface $jwkset
+     * @param \Jose\Objects\JWKSetInterface $jwkset
      */
     public function __construct(JWKSetInterface $jwkset)
     {

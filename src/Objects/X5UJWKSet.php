@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 use Assert\Assertion;
 use Jose\KeyConverter\KeyConverter;
@@ -20,7 +20,7 @@ use Jose\KeyConverter\KeyConverter;
 final class X5UJWKSet extends DownloadedJWKSet
 {
     /**
-     * @return \Jose\Object\JWKInterface[]
+     * @return \Jose\Objects\JWKInterface[]
      */
     public function getKeys()
     {

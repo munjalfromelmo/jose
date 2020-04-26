@@ -12,7 +12,7 @@
 namespace Jose\Checker;
 
 use Assert\Assertion;
-use Jose\Object;
+use Jose\Objects;
 
 /**
  * Class CheckerManager.
@@ -30,11 +30,11 @@ class CheckerManager implements CheckerManagerInterface
     private $header_checkers = [];
 
     /**
-     * @param \Jose\Object\JWTInterface $jwt
+     * @param \Jose\Objects\JWTInterface $jwt
      *
      * @return string[]
      */
-    private function checkJWT(Object\JWTInterface $jwt)
+    private function checkJWT(Objects\JWTInterface $jwt)
     {
         $checked_claims = [];
 
@@ -63,7 +63,7 @@ class CheckerManager implements CheckerManagerInterface
     /**
      * {@inheritdoc}
      */
-    public function checkJWS(Object\JWSInterface $jws, $signature)
+    public function checkJWS(Objects\JWSInterface $jws, $signature)
     {
         Assertion::integer($signature);
         Assertion::lessThan($signature, $jws->countSignatures());

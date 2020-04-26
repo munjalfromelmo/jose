@@ -13,8 +13,8 @@ namespace Jose\Factory;
 
 use Assert\Assertion;
 use Jose\Encrypter;
-use Jose\Object\JWE;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWE;
+use Jose\Objects\JWKInterface;
 
 final class JWEFactory implements JWEFactoryInterface
 {
@@ -57,13 +57,13 @@ final class JWEFactory implements JWEFactoryInterface
 
     /**
      * @param mixed                     $payload
-     * @param \Jose\Object\JWKInterface $recipient_key
+     * @param \Jose\Objects\JWKInterface $recipient_key
      * @param array                     $shared_protected_headers
      * @param array                     $shared_headers
      * @param array                     $recipient_headers
      * @param string|null               $aad
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
      */
     private static function createJWEAndEncrypt($payload, JWKInterface $recipient_key, array $shared_protected_headers = [], $shared_headers = [], $recipient_headers = [], $aad = null)
     {

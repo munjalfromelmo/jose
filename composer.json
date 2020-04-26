@@ -14,6 +14,12 @@
             "homepage": "https://github.com/Spomky-Labs/jose/contributors"
         }
     ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:farazive/PHPASN1.git"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Jose\\":  "src/"
@@ -33,7 +39,7 @@
         "beberlei/assert": "^2.4",
         "symfony/polyfill-mbstring": "^1.1",
         "symfony/polyfill-php70": "^1.1",
-        "fgrosse/phpasn1": "^1.5",
+        "fgrosse/phpasn1": "^1.6",
         "mdanter/ecc": "0.4.*",
         "psr/cache": "^1.0"
     },

@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 use Assert\Assertion;
 use Base64Url\Base64Url;
@@ -32,7 +32,7 @@ final class JWS implements JWSInterface
     private $encoded_payload = null;
 
     /**
-     * @var \Jose\Object\SignatureInterface[]
+     * @var \Jose\Objects\SignatureInterface[]
      */
     private $signatures = [];
 
@@ -226,7 +226,7 @@ final class JWS implements JWSInterface
     }
 
     /**
-     * @param \Jose\Object\SignatureInterface $signature
+     * @param \Jose\Objects\SignatureInterface $signature
      *
      * @return bool
      */

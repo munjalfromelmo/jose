@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 use Jose\KeyConverter\ECKey;
 use Jose\KeyConverter\RSAKey;
@@ -20,7 +20,7 @@ use Jose\KeyConverter\RSAKey;
 trait JWKSetPEM
 {
     /**
-     * @return \Jose\Object\JWKInterface[]
+     * @return \Jose\Objects\JWKInterface[]
      */
     abstract public function getKeys();
 
@@ -49,7 +49,7 @@ trait JWKSetPEM
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      *
      * @return string
      */

@@ -13,7 +13,7 @@ namespace Jose\Algorithm\Signature;
 
 use Assert\Assertion;
 use Jose\Algorithm\SignatureAlgorithmInterface;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 /**
  * This class is an abstract class that implements the none algorithm (plaintext).

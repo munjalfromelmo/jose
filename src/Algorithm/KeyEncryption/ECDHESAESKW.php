@@ -11,7 +11,7 @@
 
 namespace Jose\Algorithm\KeyEncryption;
 
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 /**
  * Class ECDHESAESKW.

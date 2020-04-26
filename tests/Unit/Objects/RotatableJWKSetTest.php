@@ -10,7 +10,7 @@
  */
 
 use Jose\Factory\JWKFactory;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 /**
  * Class RotatableJWKSetTest.

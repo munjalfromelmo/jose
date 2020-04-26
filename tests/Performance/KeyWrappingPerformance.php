@@ -21,8 +21,8 @@ use Jose\Algorithm\KeyEncryption\KeyWrappingInterface;
 use Jose\Algorithm\KeyEncryption\PBES2HS256A128KW;
 use Jose\Algorithm\KeyEncryption\PBES2HS384A192KW;
 use Jose\Algorithm\KeyEncryption\PBES2HS512A256KW;
-use Jose\Object\JWK;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWK;
+use Jose\Objects\JWKInterface;
 
 function testKeyWrappinPerformance(KeyWrappingInterface $alg, JWKInterface $recipient_key)
 {

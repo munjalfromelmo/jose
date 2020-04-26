@@ -16,7 +16,7 @@ use Jose\Decrypter;
 use Jose\Encrypter;
 use Jose\Factory\JWEFactory;
 use Jose\Loader;
-use Jose\Object\JWK;
+use Jose\Objects\JWK;
 
 /**
  * @see https://tools.ietf.org/html/rfc7520#section-5.2

@@ -11,7 +11,7 @@
 
 namespace Jose\Checker;
 
-use Jose\Object\JWTInterface;
+use Jose\Objects\JWTInterface;
 
 /**
  * Interface ClaimCheckerInterface.
@@ -19,11 +19,11 @@ use Jose\Object\JWTInterface;
 interface ClaimCheckerInterface
 {
     /**
-     * @param \Jose\Object\JWTInterface $jwt
-     *
-     * @throws \InvalidArgumentException
+     * @param \Jose\Objects\JWTInterface $jwt
      *
      * @return string[]
+     *@throws \InvalidArgumentException
+     *
      */
     public function checkClaim(JWTInterface $jwt);
 }

@@ -11,22 +11,22 @@
 
 namespace Jose\Factory;
 
-use Jose\Object\JWKSetInterface;
+use Jose\Objects\JWKSetInterface;
 use Psr\Cache\CacheItemPoolInterface;
 
 interface JWKFactoryInterface
 {
     /**
-     * @param \Jose\Object\JWKSetInterface $jwkset
+     * @param \Jose\Objects\JWKSetInterface $jwkset
      *
-     * @return \Jose\Object\JWKSetInterface
+     * @return \Jose\Objects\JWKSetInterface
      */
     public static function createPublicKeySet(JWKSetInterface $jwkset);
 
     /**
-     * @param \Jose\Object\JWKSetInterface[] $jwksets
+     * @param \Jose\Objects\JWKSetInterface[] $jwksets
      *
-     * @return \Jose\Object\JWKSetInterface
+     * @return \Jose\Objects\JWKSetInterface
      */
     public static function createKeySets(array $jwksets = []);
 
@@ -35,7 +35,7 @@ interface JWKFactoryInterface
      * @param array  $parameters
      * @param int    $nb_keys
      *
-     * @return \Jose\Object\JWKSetInterface
+     * @return \Jose\Objects\JWKSetInterface
      */
     public static function createStorableKeySet($filename, array $parameters, $nb_keys);
 
@@ -45,7 +45,7 @@ interface JWKFactoryInterface
      * @param int      $nb_keys
      * @param int|null $interval
      *
-     * @return \Jose\Object\JWKSetInterface
+     * @return \Jose\Objects\JWKSetInterface
      */
     public static function createRotatableKeySet($filename, array $parameters, $nb_keys, $interval = null);
 
@@ -53,56 +53,56 @@ interface JWKFactoryInterface
      * @param string $filename
      * @param array  $parameters
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createStorableKey($filename, array $parameters);
 
     /**
      * @param array $config
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createKey(array $config);
 
     /**
      * @param array $values Values to configure the key. Must contain at least the index 'size' with the key size in bits
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createRSAKey(array $values);
 
     /**
      * @param array $values Values to configure the key. Must contain at least the index 'crv' with the curve
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createECKey(array $values);
 
     /**
      * @param array $values Values to configure the key. Must contain at least the index 'size' with the key size in bits
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createOctKey(array $values);
 
     /**
      * @param array $values Values to configure the key. Must contain at least the index 'crv' with the curve
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createOKPKey(array $values);
 
     /**
      * @param array $values values to configure the key
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createNoneKey(array $values);
 
     /**
      * @param array $values
      *
-     * @return \Jose\Object\JWKInterface|\Jose\Object\JWKSetInterface
+     * @return \Jose\Objects\JWKInterface|\Jose\Objects\JWKSetInterface
      */
     public static function createFromValues(array $values);
 
@@ -110,7 +110,7 @@ interface JWKFactoryInterface
      * @param string $file
      * @param array  $additional_values
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createFromCertificateFile($file, array $additional_values = []);
 
@@ -118,7 +118,7 @@ interface JWKFactoryInterface
      * @param string $certificate
      * @param array  $additional_values
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createFromCertificate($certificate, array $additional_values = []);
 
@@ -126,7 +126,7 @@ interface JWKFactoryInterface
      * @param resource $res
      * @param array    $additional_values
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createFromX509Resource($res, array $additional_values = []);
 
@@ -135,7 +135,7 @@ interface JWKFactoryInterface
      * @param null|string $password
      * @param array       $additional_values
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createFromKeyFile($file, $password = null, array $additional_values = []);
 
@@ -144,7 +144,7 @@ interface JWKFactoryInterface
      * @param null|string $password
      * @param array       $additional_values
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createFromKey($key, $password = null, array $additional_values = []);
 
@@ -155,7 +155,7 @@ interface JWKFactoryInterface
      * @param int|null                               $ttl
      * @param bool                                   $allow_http_connection
      *
-     * @return \Jose\Object\JWKSetInterface
+     * @return \Jose\Objects\JWKSetInterface
      */
     public static function createFromJKU($jku, $allow_unsecured_connection = false, CacheItemPoolInterface $cache = null, $ttl = 86400, $allow_http_connection = false);
 
@@ -166,7 +166,7 @@ interface JWKFactoryInterface
      * @param int|null                               $ttl
      * @param bool                                   $allow_http_connection
      *
-     * @return \Jose\Object\JWKSetInterface
+     * @return \Jose\Objects\JWKSetInterface
      */
     public static function createFromX5U($x5u, $allow_unsecured_connection = false, CacheItemPoolInterface $cache = null, $ttl = 86400, $allow_http_connection = false);
 
@@ -174,15 +174,15 @@ interface JWKFactoryInterface
      * @param array $x5c
      * @param array $additional_values
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createFromX5C(array $x5c, array $additional_values = []);
 
     /**
-     * @param \Jose\Object\JWKSetInterface $jwk_set
+     * @param \Jose\Objects\JWKSetInterface $jwk_set
      * @param int                          $key_index
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public static function createFromKeySet(JWKSetInterface $jwk_set, $key_index);
 }

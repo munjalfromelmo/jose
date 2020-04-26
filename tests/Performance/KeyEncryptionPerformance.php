@@ -15,8 +15,8 @@ use Jose\Algorithm\KeyEncryption\KeyEncryptionInterface;
 use Jose\Algorithm\KeyEncryption\RSA15;
 use Jose\Algorithm\KeyEncryption\RSAOAEP;
 use Jose\Algorithm\KeyEncryption\RSAOAEP256;
-use Jose\Object\JWK;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWK;
+use Jose\Objects\JWKInterface;
 
 function testKeyEncryptionPerformance(KeyEncryptionInterface $alg, JWKInterface $recipient_key)
 {

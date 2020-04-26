@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 use Assert\Assertion;
 use Base64Url\Base64Url;
@@ -202,7 +202,7 @@ class StorableJWKSet implements StorableInterface, JWKSetInterface
     }
 
     /**
-     * @return \Jose\Object\JWKSetInterface
+     * @return \Jose\Objects\JWKSetInterface
      */
     protected function getJWKSet()
     {
@@ -236,7 +236,7 @@ class StorableJWKSet implements StorableInterface, JWKSetInterface
     }
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     protected function createJWK()
     {

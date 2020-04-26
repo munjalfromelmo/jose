@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 interface JWEInterface extends JWTInterface
 {
@@ -26,10 +26,10 @@ interface JWEInterface extends JWTInterface
     public function isEncrypted();
 
     /**
-     * @param \Jose\Object\JWKInterface $recipient_key
+     * @param \Jose\Objects\JWKInterface $recipient_key
      * @param array                     $recipient_headers
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
      */
     public function addRecipientInformation(JWKInterface $recipient_key, $recipient_headers = []);
 
@@ -37,21 +37,21 @@ interface JWEInterface extends JWTInterface
      * @param string|null $encrypted_key
      * @param array       $recipient_headers
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
      */
     public function addRecipientWithEncryptedKey($encrypted_key, array $recipient_headers);
 
     /**
      * Returns the recipients associated with the JWS.
      *
-     * @return \Jose\Object\RecipientInterface[]
+     * @return \Jose\Objects\RecipientInterface[]
      */
     public function getRecipients();
 
     /**
      * @param int $id
      *
-     * @return \Jose\Object\RecipientInterface
+     * @return \Jose\Objects\RecipientInterface
      */
     public function &getRecipient($id);
 
@@ -84,9 +84,9 @@ interface JWEInterface extends JWTInterface
     /**
      * @param string $ciphertext
      *
+     * @return \Jose\Objects\JWEInterface
      * @internal
      *
-     * @return \Jose\Object\JWEInterface
      */
     public function withCiphertext($ciphertext);
 
@@ -98,11 +98,11 @@ interface JWEInterface extends JWTInterface
     public function getAAD();
 
     /**
-     * @internal
-     *
      * @param string $aad
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
+     * @internal
+     *
      */
     public function withAAD($aad);
 
@@ -114,11 +114,11 @@ interface JWEInterface extends JWTInterface
     public function getIV();
 
     /**
-     * @internal
-     *
      * @param string $iv
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
+     * @internal
+     *
      */
     public function withIV($iv);
 
@@ -130,11 +130,11 @@ interface JWEInterface extends JWTInterface
     public function getTag();
 
     /**
-     * @internal
-     *
      * @param string $tag
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
+     *@internal
+     *
      */
     public function withTag($tag);
 
@@ -146,11 +146,11 @@ interface JWEInterface extends JWTInterface
     public function getEncodedSharedProtectedHeaders();
 
     /**
-     * @internal
-     *
      * @param string $encoded_shared_protected_headers
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
+     *@internal
+     *
      */
     public function withEncodedSharedProtectedHeaders($encoded_shared_protected_headers);
 
@@ -162,7 +162,7 @@ interface JWEInterface extends JWTInterface
     /**
      * @param array $shared_protected_headers
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
      */
     public function withSharedProtectedHeaders(array $shared_protected_headers);
 
@@ -170,7 +170,7 @@ interface JWEInterface extends JWTInterface
      * @param string     $key
      * @param mixed|null $value
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
      */
     public function withSharedProtectedHeader($key, $value);
 
@@ -196,7 +196,7 @@ interface JWEInterface extends JWTInterface
     /**
      * @param array $shared_headers
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
      */
     public function withSharedHeaders(array $shared_headers);
 
@@ -204,7 +204,7 @@ interface JWEInterface extends JWTInterface
      * @param string     $key
      * @param mixed|null $value
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
      */
     public function withSharedHeader($key, $value);
 

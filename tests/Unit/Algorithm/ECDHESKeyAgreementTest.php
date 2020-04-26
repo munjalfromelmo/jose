@@ -15,7 +15,7 @@ use Jose\Algorithm\KeyEncryption\ECDHESA128KW;
 use Jose\Algorithm\KeyEncryption\ECDHESA192KW;
 use Jose\Algorithm\KeyEncryption\ECDHESA256KW;
 use Jose\Factory\JWKFactory;
-use Jose\Object\JWK;
+use Jose\Objects\JWK;
 
 /**
  * Class ECDHESKeyAgreementTest.

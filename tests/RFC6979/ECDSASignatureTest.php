@@ -17,7 +17,7 @@ use Jose\Algorithm\Signature\ES384;
 use Jose\Algorithm\Signature\ES512;
 use Jose\Algorithm\SignatureAlgorithmInterface;
 use Jose\Factory\JWKFactory;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 /**
  * @see https://tools.ietf.org/html/rfc6979#appendix-A.2.5
@@ -38,7 +38,7 @@ class ECDSASignatureTest extends \PHPUnit_Framework_TestCase
     /**
      * @param \Jose\Algorithm\SignatureAlgorithmInterface $algorithm
      * @param string                                      $message
-     * @param \Jose\Object\JWKInterface                   $key
+     * @param \Jose\Objects\JWKInterface                   $key
      * @param string                                      $signature
      *
      * @dataProvider dataWithVectors

@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 use Base64Url\Base64Url;
 use Jose\Factory\JWKFactory;
@@ -87,7 +87,7 @@ class StorableJWK implements StorableInterface, JWKInterface
     }
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     protected function getJWK()
     {

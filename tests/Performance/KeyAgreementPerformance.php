@@ -14,8 +14,8 @@ include_once __DIR__.'/../../vendor/autoload.php';
 use Jose\Algorithm\KeyEncryption\ECDHES;
 use Jose\Algorithm\KeyEncryption\KeyAgreementInterface;
 use Jose\Factory\JWKFactory;
-use Jose\Object\JWK;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWK;
+use Jose\Objects\JWKInterface;
 
 function testKeyAgreementPerformance($message, KeyAgreementInterface $alg, JWKInterface $recipient_key)
 {

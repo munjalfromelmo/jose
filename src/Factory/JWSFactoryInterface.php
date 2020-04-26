@@ -11,7 +11,7 @@
 
 namespace Jose\Factory;
 
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 interface JWSFactoryInterface
 {
@@ -19,13 +19,13 @@ interface JWSFactoryInterface
      * @param mixed $payload
      * @param bool  $is_payload_detached
      *
-     * @return \Jose\Object\JWSInterface
+     * @return \Jose\Objects\JWSInterface
      */
     public static function createJWS($payload, $is_payload_detached = false);
 
     /**
      * @param mixed                     $payload
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      * @param array                     $protected_headers
      *
      * @return string
@@ -34,7 +34,7 @@ interface JWSFactoryInterface
 
     /**
      * @param mixed                     $payload
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      * @param array                     $protected_headers
      *
      * @return string
@@ -43,7 +43,7 @@ interface JWSFactoryInterface
 
     /**
      * @param mixed                     $payload
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      * @param array                     $protected_headers
      * @param array                     $headers
      *
@@ -53,7 +53,7 @@ interface JWSFactoryInterface
 
     /**
      * @param mixed                     $payload
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      * @param array                     $protected_headers
      * @param array                     $headers
      *

@@ -14,8 +14,8 @@ namespace Jose\Algorithm\KeyEncryption;
 use Assert\Assertion;
 use Base64Url\Base64Url;
 use Jose\Factory\JWKFactory;
-use Jose\Object\JWK;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWK;
+use Jose\Objects\JWKInterface;
 use Jose\Util\ConcatKDF;
 use Mdanter\Ecc\Crypto\EcDH\EcDH;
 use Mdanter\Ecc\EccFactory;
@@ -67,12 +67,12 @@ final class ECDHES implements KeyAgreementInterface
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $private_key
-     * @param \Jose\Object\JWKInterface $public_key
-     *
-     * @throws \InvalidArgumentException
+     * @param \Jose\Objects\JWKInterface $private_key
+     * @param \Jose\Objects\JWKInterface $public_key
      *
      * @return int|string|void
+     *@throws \InvalidArgumentException
+     *
      */
     public function calculateAgreementKey(JWKInterface $private_key, JWKInterface $public_key)
     {
@@ -123,7 +123,7 @@ final class ECDHES implements KeyAgreementInterface
     /**
      * @param array $complete_header
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     private function getPublicKey(array $complete_header)
     {
@@ -137,7 +137,7 @@ final class ECDHES implements KeyAgreementInterface
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param bool                      $is_private
      */
     private function checkKey(JWKInterface $key, $is_private)

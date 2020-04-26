@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 use Assert\Assertion;
 
@@ -36,7 +36,7 @@ abstract class BaseJWKSet
     /**
      * @param int $index
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public function getKey($index)
     {
@@ -48,12 +48,12 @@ abstract class BaseJWKSet
     }
 
     /**
-     * @return \Jose\Object\JWKInterface[]
+     * @return \Jose\Objects\JWKInterface[]
      */
     abstract public function getKeys();
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      */
     abstract public function addKey(JWKInterface $key);
 
@@ -81,7 +81,7 @@ abstract class BaseJWKSet
     }
 
     /**
-     * @return \Jose\Object\JWKInterface|null
+     * @return \Jose\Objects\JWKInterface|null
      */
     public function current()
     {
@@ -135,7 +135,7 @@ abstract class BaseJWKSet
     /**
      * @param mixed $offset
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public function offsetGet($offset)
     {
@@ -164,7 +164,7 @@ abstract class BaseJWKSet
      * @param null|string $algorithm
      * @param array       $restrictions
      *
-     * @return null|\Jose\Object\JWKInterface
+     * @return null|\Jose\Objects\JWKInterface
      */
     public function selectKey($type, $algorithm = null, array $restrictions = [])
     {
@@ -212,7 +212,7 @@ abstract class BaseJWKSet
 
     /**
      * @param string                    $type
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      *
      * @return bool|int
      */
@@ -230,7 +230,7 @@ abstract class BaseJWKSet
 
     /**
      * @param null|string               $algorithm
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      *
      * @return bool|int
      */
@@ -248,7 +248,7 @@ abstract class BaseJWKSet
 
     /**
      * @param array                     $restrictions
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      *
      * @return bool
      */

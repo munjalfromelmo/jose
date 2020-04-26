@@ -12,8 +12,8 @@
 namespace Jose\Factory;
 
 use Assert\Assertion;
-use Jose\Object\JWKInterface;
-use Jose\Object\JWS;
+use Jose\Objects\JWKInterface;
+use Jose\Objects\JWS;
 use Jose\Signer;
 
 final class JWSFactory implements JWSFactoryInterface
@@ -76,10 +76,10 @@ final class JWSFactory implements JWSFactoryInterface
 
     /**
      * @param mixed                     $payload
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      * @param array                     $protected_headers
      *
-     * @return \Jose\Object\JWSInterface
+     * @return \Jose\Objects\JWSInterface
      */
     private static function createJWSAndSign($payload, JWKInterface $signature_key, array $protected_headers = [], $headers = [])
     {
@@ -97,10 +97,10 @@ final class JWSFactory implements JWSFactoryInterface
 
     /**
      * @param mixed                     $payload
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      * @param array                     $protected_headers
      *
-     * @return \Jose\Object\JWSInterface
+     * @return \Jose\Objects\JWSInterface
      */
     private static function createJWSWithDetachedPayloadAndSign($payload, JWKInterface $signature_key, array $protected_headers = [], $headers = [])
     {

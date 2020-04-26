@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 /**
  * Interface RecipientInterface.
@@ -20,15 +20,15 @@ interface RecipientInterface
      * @param array       $headers
      * @param string|null $encrypted_key
      *
-     * @return \Jose\Object\Recipient
+     * @return \Jose\Objects\Recipient
      */
     public static function createRecipientFromLoadedJWE(array $headers, $encrypted_key);
 
     /**
-     * @param \Jose\Object\JWKInterface $recipient_key
+     * @param \Jose\Objects\JWKInterface $recipient_key
      * @param array                     $headers
      *
-     * @return \Jose\Object\Recipient
+     * @return \Jose\Objects\Recipient
      */
     public static function createRecipient(JWKInterface $recipient_key, array $headers = []);
 
@@ -59,7 +59,7 @@ interface RecipientInterface
     public function getEncryptedKey();
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public function getRecipientKey();
 }

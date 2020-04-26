@@ -13,8 +13,8 @@ use Jose\Factory\JWEFactory;
 use Jose\Factory\JWKFactory;
 use Jose\Factory\JWSFactory;
 use Jose\Loader;
-use Jose\Object\JWEInterface;
-use Jose\Object\JWSInterface;
+use Jose\Objects\JWEInterface;
+use Jose\Objects\JWSInterface;
 
 /**
  * Class RSAKeyWithoutAllPrimesTest.
@@ -129,7 +129,7 @@ class RSAKeyWithoutAllPrimesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     private function getPrivateKey()
     {
@@ -147,7 +147,7 @@ class RSAKeyWithoutAllPrimesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     private function getMinimalPrivateKey()
     {

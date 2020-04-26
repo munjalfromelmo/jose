@@ -99,12 +99,12 @@ final class JWTLoader implements JWTLoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function load($assertion, Object\JWKSetInterface $encryption_key_set = null, $is_encryption_required = false)
+    public function load($assertion, Objects\JWKSetInterface $encryption_key_set = null, $is_encryption_required = false)
     {
         Assertion::string($assertion);
         Assertion::boolean($is_encryption_required);
         $jwt = $this->loader->load($assertion);
-        if ($jwt instanceof Object\JWEInterface) {
+        if ( $jwt instanceof Objects\JWEInterface) {
             Assertion::notNull($encryption_key_set, 'Encryption key set is not available.');
             Assertion::true($this->isDecryptionSupportEnabled(), 'Encryption support is not enabled.');
             Assertion::inArray($jwt->getSharedProtectedHeader('alg'), $this->getSupportedKeyEncryptionAlgorithms(), sprintf('The key encryption algorithm "%s" is not allowed.', $jwt->getSharedProtectedHeader('alg')));
@@ -120,7 +120,7 @@ final class JWTLoader implements JWTLoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function verify(Object\JWSInterface $jws, Object\JWKSetInterface $signature_key_set, $detached_payload = null)
+    public function verify(Objects\JWSInterface $jws, Objects\JWKSetInterface $signature_key_set, $detached_payload = null)
     {
         Assertion::inArray($jws->getSignature(0)->getProtectedHeader('alg'), $this->getSupportedSignatureAlgorithms(), sprintf('The signature algorithm "%s" is not supported or not allowed.', $jws->getSignature(0)->getProtectedHeader('alg')));
 
@@ -133,17 +133,17 @@ final class JWTLoader implements JWTLoaderInterface
     }
 
     /**
-     * @param \Jose\Object\JWEInterface    $jwe
-     * @param \Jose\Object\JWKSetInterface $encryption_key_set
+     * @param \Jose\Objects\JWEInterface    $jwe
+     * @param \Jose\Objects\JWKSetInterface $encryption_key_set
      *
-     * @return \Jose\Object\JWSInterface
+     * @return \Jose\Objects\JWSInterface
      */
-    private function decryptAssertion(Object\JWEInterface $jwe, Object\JWKSetInterface $encryption_key_set)
+    private function decryptAssertion(Objects\JWEInterface $jwe, Objects\JWKSetInterface $encryption_key_set)
     {
         $this->decrypter->decryptUsingKeySet($jwe, $encryption_key_set);
 
         $jws = $this->loader->load($jwe->getPayload());
-        Assertion::isInstanceOf($jws, Object\JWSInterface::class, 'The encrypted assertion does not contain a JWS.');
+        Assertion::isInstanceOf($jws, Objects\JWSInterface::class, 'The encrypted assertion does not contain a JWS.');
 
         return $jws;
     }

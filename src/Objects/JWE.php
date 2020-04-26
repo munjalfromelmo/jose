@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 use Assert\Assertion;
 use Base64Url\Base64Url;
@@ -22,7 +22,7 @@ final class JWE implements JWEInterface
     use JWT;
 
     /**
-     * @var \Jose\Object\RecipientInterface[]
+     * @var \Jose\Objects\RecipientInterface[]
      */
     private $recipients = [];
 

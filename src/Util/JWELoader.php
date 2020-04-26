@@ -12,15 +12,15 @@
 namespace Jose\Util;
 
 use Base64Url\Base64Url;
-use Jose\Object\JWE;
-use Jose\Object\JWEInterface;
+use Jose\Objects\JWE;
+use Jose\Objects\JWEInterface;
 
 final class JWELoader
 {
     /**
      * @param array $data
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
      */
     public static function loadSerializedJsonJWE(array $data)
     {
@@ -44,7 +44,7 @@ final class JWELoader
     }
 
     /**
-     * @param \Jose\Object\JWEInterface $jwe
+     * @param \Jose\Objects\JWEInterface $jwe
      * @param array                     $data
      */
     private static function populateIV(JWEInterface &$jwe, array $data)
@@ -55,7 +55,7 @@ final class JWELoader
     }
 
     /**
-     * @param \Jose\Object\JWEInterface $jwe
+     * @param \Jose\Objects\JWEInterface $jwe
      * @param array                     $data
      */
     private static function populateAAD(JWEInterface &$jwe, array $data)
@@ -66,7 +66,7 @@ final class JWELoader
     }
 
     /**
-     * @param \Jose\Object\JWEInterface $jwe
+     * @param \Jose\Objects\JWEInterface $jwe
      * @param array                     $data
      */
     private static function populateTag(JWEInterface &$jwe, array $data)
@@ -77,7 +77,7 @@ final class JWELoader
     }
 
     /**
-     * @param \Jose\Object\JWEInterface $jwe
+     * @param \Jose\Objects\JWEInterface $jwe
      * @param array                     $data
      */
     private static function populateSharedProtectedHeaders(JWEInterface &$jwe, array $data)
@@ -89,7 +89,7 @@ final class JWELoader
     }
 
     /**
-     * @param \Jose\Object\JWEInterface $jwe
+     * @param \Jose\Objects\JWEInterface $jwe
      * @param array                     $data
      */
     private static function populateSharedHeaders(JWEInterface &$jwe, array $data)

@@ -13,7 +13,7 @@ namespace Jose\Test\RFC7520;
 
 use Jose\Factory\JWSFactory;
 use Jose\Loader;
-use Jose\Object\JWK;
+use Jose\Objects\JWK;
 use Jose\Signer;
 use Jose\Verifier;
 

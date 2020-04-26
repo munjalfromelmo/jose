@@ -10,8 +10,8 @@
  */
 
 use Jose\Factory\JWKFactory;
-use Jose\Object\JWKInterface;
-use Jose\Object\JWKSetInterface;
+use Jose\Objects\JWKInterface;
+use Jose\Objects\JWKSetInterface;
 use Jose\Test\TestCase;
 
 /**

@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 /**
  * Class EncryptionInstruction.
@@ -27,7 +27,7 @@ final class Recipient implements RecipientInterface
     private $encrypted_key = null;
 
     /**
-     * @var \Jose\Object\JWKInterface
+     * @var \Jose\Objects\JWKInterface
      */
     private $recipient_key = null;
 

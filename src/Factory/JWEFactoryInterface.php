@@ -11,7 +11,7 @@
 
 namespace Jose\Factory;
 
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 interface JWEFactoryInterface
 {
@@ -21,13 +21,13 @@ interface JWEFactoryInterface
      * @param array       $shared_headers
      * @param null|string $aad
      *
-     * @return \Jose\Object\JWEInterface
+     * @return \Jose\Objects\JWEInterface
      */
     public static function createJWE($payload, array $shared_protected_headers = [], array $shared_headers = [], $aad = null);
 
     /**
      * @param mixed                     $payload
-     * @param \Jose\Object\JWKInterface $recipient_key
+     * @param \Jose\Objects\JWKInterface $recipient_key
      * @param array                     $shared_protected_headers
      *
      * @return string
@@ -36,7 +36,7 @@ interface JWEFactoryInterface
 
     /**
      * @param mixed                     $payload
-     * @param \Jose\Object\JWKInterface $recipient_key
+     * @param \Jose\Objects\JWKInterface $recipient_key
      * @param array                     $shared_protected_headers
      * @param array                     $shared_headers
      * @param array                     $recipient_headers

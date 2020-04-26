@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 interface JWTInterface
 {
@@ -18,8 +18,8 @@ interface JWTInterface
      *
      * @return string                       Payload
      * @return array                        Payload
-     * @return \Jose\Object\JWKInterface    Payload
-     * @return \Jose\Object\JWKSetInterface Payload
+     * @return \Jose\Objects\JWKInterface    Payload
+     * @return \Jose\Objects\JWKSetInterface Payload
      * @return mixed                        Payload
      */
     public function getPayload();
@@ -27,9 +27,9 @@ interface JWTInterface
     /**
      * @param mixed $payload
      *
+     * @return \Jose\Objects\JWTInterface
      * @internal
      *
-     * @return \Jose\Object\JWTInterface
      */
     public function withPayload($payload);
 

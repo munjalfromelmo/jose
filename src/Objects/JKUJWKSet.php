@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 use Assert\Assertion;
 
@@ -19,7 +19,7 @@ use Assert\Assertion;
 final class JKUJWKSet extends DownloadedJWKSet
 {
     /**
-     * @return \Jose\Object\JWKInterface[]
+     * @return \Jose\Objects\JWKInterface[]
      */
     public function getKeys()
     {

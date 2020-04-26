@@ -13,8 +13,8 @@ use Base64Url\Base64Url;
 use Jose\Algorithm\Signature\EdDSA;
 use Jose\Factory\JWSFactory;
 use Jose\Loader;
-use Jose\Object\JWK;
-use Jose\Object\JWSInterface;
+use Jose\Objects\JWK;
+use Jose\Objects\JWSInterface;
 use Jose\Test\TestCase;
 use Jose\Verifier;
 

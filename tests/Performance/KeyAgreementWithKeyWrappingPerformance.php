@@ -15,8 +15,8 @@ use Jose\Algorithm\KeyEncryption\ECDHESA128KW;
 use Jose\Algorithm\KeyEncryption\ECDHESA192KW;
 use Jose\Algorithm\KeyEncryption\ECDHESA256KW;
 use Jose\Algorithm\KeyEncryption\KeyAgreementWrappingInterface;
-use Jose\Object\JWK;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWK;
+use Jose\Objects\JWKInterface;
 
 function testKeyAgreementWithKeyWrappingEncryptionPerformance($message, KeyAgreementWrappingInterface $alg, JWKInterface $recipient_key)
 {

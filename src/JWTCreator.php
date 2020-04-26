@@ -46,7 +46,7 @@ final class JWTCreator implements JWTCreatorInterface
     /**
      * {@inheritdoc}
      */
-    public function sign($payload, array $signature_protected_headers, Object\JWKInterface $signature_key)
+    public function sign($payload, array $signature_protected_headers, Objects\JWKInterface $signature_key)
     {
         $jws = Factory\JWSFactory::createJWS($payload);
 
@@ -59,7 +59,7 @@ final class JWTCreator implements JWTCreatorInterface
     /**
      * {@inheritdoc}
      */
-    public function encrypt($payload, array $encryption_protected_headers, Object\JWKInterface $encryption_key)
+    public function encrypt($payload, array $encryption_protected_headers, Objects\JWKInterface $encryption_key)
     {
         Assertion::true($this->isEncryptionSupportEnabled(), 'The encryption support is not enabled');
 
@@ -73,7 +73,7 @@ final class JWTCreator implements JWTCreatorInterface
     /**
      * {@inheritdoc}
      */
-    public function signAndEncrypt($payload, array $signature_protected_headers, Object\JWKInterface $signature_key, array $encryption_protected_headers, Object\JWKInterface $encryption_key)
+    public function signAndEncrypt($payload, array $signature_protected_headers, Objects\JWKInterface $signature_key, array $encryption_protected_headers, Objects\JWKInterface $encryption_key)
     {
         $jws = $this->sign($payload, $signature_protected_headers, $signature_key);
         $jwe = $this->encrypt($jws, $encryption_protected_headers, $encryption_key);

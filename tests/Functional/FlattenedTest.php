@@ -11,8 +11,8 @@
 
 use Jose\Decrypter;
 use Jose\Loader;
-use Jose\Object\JWEInterface;
-use Jose\Object\JWSInterface;
+use Jose\Objects\JWEInterface;
+use Jose\Objects\JWSInterface;
 use Jose\Test\TestCase;
 
 /**

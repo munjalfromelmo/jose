@@ -13,16 +13,16 @@ namespace Jose\Util;
 
 use Assert\Assertion;
 use Base64Url\Base64Url;
-use Jose\Object\JWS;
-use Jose\Object\JWSInterface;
-use Jose\Object\SignatureInterface;
+use Jose\Objects\JWS;
+use Jose\Objects\JWSInterface;
+use Jose\Objects\SignatureInterface;
 
 final class JWSLoader
 {
     /**
      * @param array $data
      *
-     * @return \Jose\Object\JWSInterface
+     * @return \Jose\Objects\JWSInterface
      */
     public static function loadSerializedJsonJWS(array $data)
     {
@@ -68,7 +68,7 @@ final class JWSLoader
     }
 
     /**
-     * @param \Jose\Object\JWSInterface $jws
+     * @param \Jose\Objects\JWSInterface $jws
      * @param array                     $data
      */
     private static function populatePayload(JWSInterface &$jws, array $data)
@@ -98,7 +98,7 @@ final class JWSLoader
     }
 
     /**
-     * @param \Jose\Object\SignatureInterface $signature
+     * @param \Jose\Objects\SignatureInterface $signature
      *
      * @return bool
      */

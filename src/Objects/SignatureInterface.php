@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 /**
  * Signature Instruction Interface.
@@ -23,21 +23,21 @@ interface SignatureInterface
      * @param string|null $encoded_protected_headers
      * @param array       $headers
      *
-     * @return \Jose\Object\Signature
+     * @return \Jose\Objects\Signature
      */
     public static function createSignatureFromLoadedData($signature, $encoded_protected_headers, array $headers);
 
     /**
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      * @param array                     $protected_headers
      * @param array                     $headers
      *
-     * @return \Jose\Object\Signature
+     * @return \Jose\Objects\Signature
      */
     public static function createSignature(JWKInterface $signature_key, array $protected_headers, array $headers);
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public function getSignatureKey();
 

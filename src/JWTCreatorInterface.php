@@ -21,31 +21,31 @@ interface JWTCreatorInterface
     /**
      * @param mixed                     $payload
      * @param array                     $signature_protected_headers
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      *
      * @return string
      */
-    public function sign($payload, array $signature_protected_headers, Object\JWKInterface $signature_key);
+    public function sign($payload, array $signature_protected_headers, Objects\JWKInterface $signature_key);
 
     /**
      * @param string                    $payload
      * @param array                     $encryption_protected_headers
-     * @param \Jose\Object\JWKInterface $encryption_key
+     * @param \Jose\Objects\JWKInterface $encryption_key
      *
      * @return string
      */
-    public function encrypt($payload, array $encryption_protected_headers, Object\JWKInterface $encryption_key);
+    public function encrypt($payload, array $encryption_protected_headers, Objects\JWKInterface $encryption_key);
 
     /**
      * @param mixed                     $payload
      * @param array                     $signature_protected_headers
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      * @param array                     $encryption_protected_headers
-     * @param \Jose\Object\JWKInterface $encryption_key
+     * @param \Jose\Objects\JWKInterface $encryption_key
      *
      * @return string
      */
-    public function signAndEncrypt($payload, array $signature_protected_headers, Object\JWKInterface $signature_key, array $encryption_protected_headers, Object\JWKInterface $encryption_key);
+    public function signAndEncrypt($payload, array $signature_protected_headers, Objects\JWKInterface $signature_key, array $encryption_protected_headers, Objects\JWKInterface $encryption_key);
 
     /**
      * @return string[]

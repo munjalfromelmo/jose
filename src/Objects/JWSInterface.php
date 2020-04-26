@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 interface JWSInterface extends JWTInterface
 {
@@ -19,21 +19,21 @@ interface JWSInterface extends JWTInterface
     public function isPayloadDetached();
 
     /**
-     * @return \Jose\Object\JWTInterface
+     * @return \Jose\Objects\JWTInterface
      */
     public function withDetachedPayload();
 
     /**
-     * @return \Jose\Object\JWTInterface
+     * @return \Jose\Objects\JWTInterface
      */
     public function withAttachedPayload();
 
     /**
-     * @param \Jose\Object\SignatureInterface $signature
-     *
-     * @internal
+     * @param \Jose\Objects\SignatureInterface $signature
      *
      * @return string|null
+     *@internal
+     *
      */
     public function getEncodedPayload(SignatureInterface $signature);
 
@@ -47,11 +47,11 @@ interface JWSInterface extends JWTInterface
     public function countSignatures();
 
     /**
-     * @param \Jose\Object\JWKInterface $signature_key
+     * @param \Jose\Objects\JWKInterface $signature_key
      * @param array                     $protected_headers
      * @param array                     $headers
      *
-     * @return \Jose\Object\JWSInterface
+     * @return \Jose\Objects\JWSInterface
      */
     public function addSignatureInformation(JWKInterface $signature_key, array $protected_headers, array $headers = []);
 
@@ -60,21 +60,21 @@ interface JWSInterface extends JWTInterface
      * @param string|null $encoded_protected_headers
      * @param array       $headers
      *
-     * @return \Jose\Object\JWSInterface
+     * @return \Jose\Objects\JWSInterface
      */
     public function addSignatureFromLoadedData($signature, $encoded_protected_headers, array $headers);
 
     /**
      * Returns the signature associated with the JWS.
      *
-     * @return \Jose\Object\SignatureInterface[]
+     * @return \Jose\Objects\SignatureInterface[]
      */
     public function getSignatures();
 
     /**
      * @param int $id
      *
-     * @return \Jose\Object\SignatureInterface
+     * @return \Jose\Objects\SignatureInterface
      */
     public function &getSignature($id);
 

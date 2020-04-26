@@ -12,16 +12,16 @@
 namespace Jose\Algorithm\KeyEncryption;
 
 use Jose\Algorithm\KeyEncryptionAlgorithmInterface;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 interface DirectEncryptionInterface extends KeyEncryptionAlgorithmInterface
 {
     /**
-     * @param \Jose\Object\JWKInterface $key The key used to get the CEK
-     *
-     * @throws \Exception If key does not support the algorithm or if the key usage does not authorize the operation
+     * @param \Jose\Objects\JWKInterface $key The key used to get the CEK
      *
      * @return string The CEK
+     *@throws \Exception If key does not support the algorithm or if the key usage does not authorize the operation
+     *
      */
     public function getCEK(JWKInterface $key);
 }

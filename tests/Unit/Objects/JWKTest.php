@@ -9,9 +9,9 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-use Jose\Object\JWK;
-use Jose\Object\JWKInterface;
-use Jose\Object\JWKSet;
+use Jose\Objects\JWK;
+use Jose\Objects\JWKInterface;
+use Jose\Objects\JWKSet;
 
 /**
  * Class JWKTest.

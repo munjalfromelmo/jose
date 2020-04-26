@@ -11,7 +11,7 @@
 
 namespace Jose\Checker;
 
-use Jose\Object\JWSInterface;
+use Jose\Objects\JWSInterface;
 
 /**
  * Interface CheckerManagerInterface.
@@ -19,7 +19,7 @@ use Jose\Object\JWSInterface;
 interface CheckerManagerInterface
 {
     /**
-     * @param \Jose\Object\JWSInterface $jws
+     * @param \Jose\Objects\JWSInterface $jws
      * @param int                       $signature
      */
     public function checkJWS(JWSInterface $jws, $signature);

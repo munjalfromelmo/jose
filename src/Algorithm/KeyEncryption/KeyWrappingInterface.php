@@ -12,34 +12,34 @@
 namespace Jose\Algorithm\KeyEncryption;
 
 use Jose\Algorithm\KeyEncryptionAlgorithmInterface;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 interface KeyWrappingInterface extends KeyEncryptionAlgorithmInterface
 {
     /**
      * Encrypt the CEK.
      *
-     * @param \Jose\Object\JWKInterface $key                The key used to wrap the CEK
+     * @param \Jose\Objects\JWKInterface $key                The key used to wrap the CEK
      * @param string                    $cek                The CEK to encrypt
      * @param array                     $complete_headers   The complete header of the JWT
      * @param array                     $additional_headers The complete header of the JWT
      *
-     * @throws \Exception If key does not support the algorithm or if the key usage does not authorize the operation
-     *
      * @return string The encrypted CEK
+     *@throws \Exception If key does not support the algorithm or if the key usage does not authorize the operation
+     *
      */
     public function wrapKey(JWKInterface $key, $cek, array $complete_headers, array &$additional_headers);
 
     /**
      * Decrypt de CEK.
      *
-     * @param \Jose\Object\JWKInterface $key              The key used to wrap the CEK
+     * @param \Jose\Objects\JWKInterface $key              The key used to wrap the CEK
      * @param string                    $encrypted_cek    The CEK to decrypt
      * @param array                     $complete_headers The complete header of the JWT
      *
-     * @throws \Exception If key does not support the algorithm or if the key usage does not authorize the operation
-     *
      * @return string The decrypted CEK
+     *@throws \Exception If key does not support the algorithm or if the key usage does not authorize the operation
+     *
      */
     public function unwrapKey(JWKInterface $key, $encrypted_cek, array $complete_headers);
 }

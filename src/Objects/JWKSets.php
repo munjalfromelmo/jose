@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 use Assert\Assertion;
 
@@ -21,14 +21,14 @@ final class JWKSets extends BaseJWKSet implements JWKSetsInterface
     use JWKSetPEM;
 
     /**
-     * @var \Jose\Object\JWKSetInterface[]
+     * @var \Jose\Objects\JWKSetInterface[]
      */
     private $jwksets = [];
 
     /**
      * JWKSets constructor.
      *
-     * @param \Jose\Object\JWKSetInterface[] $jwksets
+     * @param \Jose\Objects\JWKSetInterface[] $jwksets
      */
     public function __construct(array $jwksets = [])
     {

@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 interface JWKInterface extends \JsonSerializable
 {
@@ -54,7 +54,7 @@ interface JWKInterface extends \JsonSerializable
     public function thumbprint($hash_algorithm);
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public function toPublic();
 }

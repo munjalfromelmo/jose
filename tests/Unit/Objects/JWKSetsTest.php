@@ -10,7 +10,7 @@
  */
 
 use Jose\Factory\JWKFactory;
-use Jose\Object\JWKSets;
+use Jose\Objects\JWKSets;
 
 /**
  * Class JWKSetsTest.

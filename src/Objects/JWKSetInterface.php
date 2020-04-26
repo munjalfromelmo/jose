@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 interface JWKSetInterface extends \Countable, \Iterator, \JsonSerializable, \ArrayAccess
 {
@@ -18,7 +18,7 @@ interface JWKSetInterface extends \Countable, \Iterator, \JsonSerializable, \Arr
      *
      * @param int $index
      *
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     public function getKey($index);
 
@@ -34,21 +34,21 @@ interface JWKSetInterface extends \Countable, \Iterator, \JsonSerializable, \Arr
     /**
      * Returns all keys in the key set.
      *
-     * @return \Jose\Object\JWKInterface[] An array of keys stored in the key set
+     * @return \Jose\Objects\JWKInterface[] An array of keys stored in the key set
      */
     public function getKeys();
 
     /**
      * Add key in the key set.
      *
-     * @param \Jose\Object\JWKInterface $key A key to store in the key set
+     * @param \Jose\Objects\JWKInterface $key A key to store in the key set
      */
     public function addKey(JWKInterface $key);
 
     /**
      * Prepend key to the set.
      *
-     * @param \Jose\Object\JWKInterface $key A key to store in the key set
+     * @param \Jose\Objects\JWKInterface $key A key to store in the key set
      */
     public function prependKey(JWKInterface $key);
 
@@ -69,7 +69,7 @@ interface JWKSetInterface extends \Countable, \Iterator, \JsonSerializable, \Arr
      * @param string|null $algorithm    Specifies the algorithm to be used
      * @param array       $restrictions More restrictions such as 'kid' or 'kty'
      *
-     * @return \Jose\Object\JWKInterface|null
+     * @return \Jose\Objects\JWKInterface|null
      */
     public function selectKey($type, $algorithm = null, array $restrictions = []);
 

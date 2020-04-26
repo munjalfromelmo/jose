@@ -26,8 +26,8 @@ use Jose\Algorithm\Signature\RS256;
 use Jose\Algorithm\Signature\RS384;
 use Jose\Algorithm\Signature\RS512;
 use Jose\Algorithm\SignatureAlgorithmInterface;
-use Jose\Object\JWK;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWK;
+use Jose\Objects\JWKInterface;
 
 function testSignaturePerformance(SignatureAlgorithmInterface $alg, JWKInterface $key)
 {

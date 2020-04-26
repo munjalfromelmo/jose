@@ -12,7 +12,7 @@
 namespace Jose\Checker;
 
 use Assert\Assertion;
-use Jose\Object\JWTInterface;
+use Jose\Objects\JWTInterface;
 
 class NotBeforeChecker implements ClaimCheckerInterface
 {

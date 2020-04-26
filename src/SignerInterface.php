@@ -31,7 +31,7 @@ interface SignerInterface
     public function getSupportedSignatureAlgorithms();
 
     /**
-     * @param \Jose\Object\JWSInterface $jws
+     * @param \Jose\Objects\JWSInterface $jws
      */
-    public function sign(Object\JWSInterface &$jws);
+    public function sign(Objects\JWSInterface &$jws);
 }

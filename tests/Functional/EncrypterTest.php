@@ -14,9 +14,9 @@ use Jose\Decrypter;
 use Jose\Encrypter;
 use Jose\Factory\JWEFactory;
 use Jose\Loader;
-use Jose\Object\JWEInterface;
-use Jose\Object\JWK;
-use Jose\Object\JWKSet;
+use Jose\Objects\JWEInterface;
+use Jose\Objects\JWK;
+use Jose\Objects\JWKSet;
 use Jose\Test\Stub\FakeLogger;
 use Jose\Test\TestCase;
 

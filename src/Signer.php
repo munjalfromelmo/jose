@@ -45,7 +45,7 @@ final class Signer implements SignerInterface
     /**
      * {@inheritdoc}
      */
-    public function sign(Object\JWSInterface &$jws)
+    public function sign(Objects\JWSInterface &$jws)
     {
         $nb_signatures = $jws->countSignatures();
 
@@ -55,10 +55,10 @@ final class Signer implements SignerInterface
     }
 
     /**
-     * @param \Jose\Object\JWSInterface       $jws
-     * @param \Jose\Object\SignatureInterface $signature
+     * @param \Jose\Objects\JWSInterface       $jws
+     * @param \Jose\Objects\SignatureInterface $signature
      */
-    private function computeSignature(Object\JWSInterface $jws, Object\SignatureInterface &$signature)
+    private function computeSignature(Objects\JWSInterface $jws, Objects\SignatureInterface &$signature)
     {
         if (null === $signature->getSignatureKey()) {
             return;
@@ -74,7 +74,7 @@ final class Signer implements SignerInterface
             $input
         );
 
-        $signature = Object\Signature::createSignatureFromLoadedData(
+        $signature = Objects\Signature::createSignatureFromLoadedData(
             $value,
             $signature->getEncodedProtectedHeaders(),
             $signature->getHeaders()
@@ -82,12 +82,12 @@ final class Signer implements SignerInterface
     }
 
     /**
-     * @param \Jose\Object\JWSInterface       $jws
-     * @param \Jose\Object\SignatureInterface $signature
+     * @param \Jose\Objects\JWSInterface       $jws
+     * @param \Jose\Objects\SignatureInterface $signature
      *
      * @return string
      */
-    private function getInputToSign(Object\JWSInterface $jws, Object\SignatureInterface $signature)
+    private function getInputToSign(Objects\JWSInterface $jws, Objects\SignatureInterface $signature)
     {
         $this->checkB64HeaderAndCrit($signature);
         $encoded_protected_headers = $signature->getEncodedProtectedHeaders();
@@ -102,11 +102,11 @@ final class Signer implements SignerInterface
     }
 
     /**
-     * @param \Jose\Object\SignatureInterface $signature
+     * @param \Jose\Objects\SignatureInterface $signature
      *
      * @throws \InvalidArgumentException
      */
-    private function checkB64HeaderAndCrit(Object\SignatureInterface $signature)
+    private function checkB64HeaderAndCrit(Objects\SignatureInterface $signature)
     {
         if (!$signature->hasProtectedHeader('b64')) {
             return;
@@ -119,11 +119,11 @@ final class Signer implements SignerInterface
 
     /**
      * @param array                     $complete_header The complete header
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      *
      * @return \Jose\Algorithm\SignatureAlgorithmInterface
      */
-    private function getSignatureAlgorithm(array $complete_header, Object\JWKInterface $key)
+    private function getSignatureAlgorithm(array $complete_header, Objects\JWKInterface $key)
     {
         Assertion::keyExists($complete_header, 'alg', 'No "alg" parameter set in the header.');
 

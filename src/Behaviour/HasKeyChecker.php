@@ -12,17 +12,17 @@
 namespace Jose\Behaviour;
 
 use Assert\Assertion;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 trait HasKeyChecker
 {
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $usage
      *
-     * @throws \InvalidArgumentException
-     *
      * @return bool
+     *@throws \InvalidArgumentException
+     *
      */
     protected function checkKeyUsage(JWKInterface $key, $usage)
     {
@@ -37,7 +37,7 @@ trait HasKeyChecker
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $usage
      *
      * @return bool
@@ -71,7 +71,7 @@ trait HasKeyChecker
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $usage
      *
      * @return bool
@@ -96,7 +96,7 @@ trait HasKeyChecker
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $algorithm
      */
     protected function checkKeyAlgorithm(JWKInterface $key, $algorithm)

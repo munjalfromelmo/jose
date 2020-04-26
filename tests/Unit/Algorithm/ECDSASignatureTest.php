@@ -14,7 +14,7 @@ use Jose\Algorithm\Signature\ES256;
 use Jose\Algorithm\Signature\ES384;
 use Jose\Algorithm\Signature\ES512;
 use Jose\KeyConverter\KeyConverter;
-use Jose\Object\JWK;
+use Jose\Objects\JWK;
 
 /**
  * @group ECDSA

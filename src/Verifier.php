@@ -46,9 +46,9 @@ final class Verifier implements VerifierInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function verifyWithKey(Object\JWSInterface $jws, Object\JWKInterface $jwk, $detached_payload = null, &$recipient_index = null)
+    public function verifyWithKey(Objects\JWSInterface $jws, Objects\JWKInterface $jwk, $detached_payload = null, &$recipient_index = null)
     {
-        $jwk_set = new Object\JWKSet();
+        $jwk_set = new Objects\JWKSet();
         $jwk_set->addKey($jwk);
 
         $this->verifySignatures($jws, $jwk_set, $detached_payload, $recipient_index);
@@ -57,20 +57,20 @@ final class Verifier implements VerifierInterface
     /**
      * {@inheritdoc}
      */
-    public function verifyWithKeySet(Object\JWSInterface $jws, Object\JWKSetInterface $jwk_set, $detached_payload = null, &$recipient_index = null)
+    public function verifyWithKeySet(Objects\JWSInterface $jws, Objects\JWKSetInterface $jwk_set, $detached_payload = null, &$recipient_index = null)
     {
         $this->verifySignatures($jws, $jwk_set, $detached_payload, $recipient_index);
     }
 
     /**
-     * @param \Jose\Object\JWSInterface       $jws
-     * @param \Jose\Object\JWKSetInterface    $jwk_set
-     * @param \Jose\Object\SignatureInterface $signature
+     * @param \Jose\Objects\JWSInterface       $jws
+     * @param \Jose\Objects\JWKSetInterface    $jwk_set
+     * @param \Jose\Objects\SignatureInterface $signature
      * @param string|null                     $detached_payload
      *
      * @return bool
      */
-    private function verifySignature(Object\JWSInterface $jws, Object\JWKSetInterface $jwk_set, Object\SignatureInterface $signature, $detached_payload = null)
+    private function verifySignature(Objects\JWSInterface $jws, Objects\JWKSetInterface $jwk_set, Objects\SignatureInterface $signature, $detached_payload = null)
     {
         $input = $this->getInputToVerify($jws, $signature, $detached_payload);
         foreach ($jwk_set->getKeys() as $jwk) {
@@ -92,13 +92,13 @@ final class Verifier implements VerifierInterface
     }
 
     /**
-     * @param \Jose\Object\JWSInterface       $jws
-     * @param \Jose\Object\SignatureInterface $signature
+     * @param \Jose\Objects\JWSInterface       $jws
+     * @param \Jose\Objects\SignatureInterface $signature
      * @param string|null                     $detached_payload
      *
      * @return string
      */
-    private function getInputToVerify(Object\JWSInterface $jws, Object\SignatureInterface $signature, $detached_payload)
+    private function getInputToVerify(Objects\JWSInterface $jws, Objects\SignatureInterface $signature, $detached_payload)
     {
         $encoded_protected_headers = $signature->getEncodedProtectedHeaders();
         if (!$signature->hasProtectedHeader('b64') || true === $signature->getProtectedHeader('b64')) {
@@ -119,12 +119,12 @@ final class Verifier implements VerifierInterface
     }
 
     /**
-     * @param \Jose\Object\JWSInterface    $jws
-     * @param \Jose\Object\JWKSetInterface $jwk_set
+     * @param \Jose\Objects\JWSInterface    $jws
+     * @param \Jose\Objects\JWKSetInterface $jwk_set
      * @param string|null                  $detached_payload
      * @param int|null                     $recipient_index
      */
-    private function verifySignatures(Object\JWSInterface $jws, Object\JWKSetInterface $jwk_set, $detached_payload = null, &$recipient_index = null)
+    private function verifySignatures(Objects\JWSInterface $jws, Objects\JWKSetInterface $jwk_set, $detached_payload = null, &$recipient_index = null)
     {
         $this->checkPayload($jws, $detached_payload);
         $this->checkJWKSet($jwk_set);
@@ -147,26 +147,26 @@ final class Verifier implements VerifierInterface
     }
 
     /**
-     * @param \Jose\Object\JWSInterface $jws
+     * @param \Jose\Objects\JWSInterface $jws
      */
-    private function checkSignatures(Object\JWSInterface $jws)
+    private function checkSignatures(Objects\JWSInterface $jws)
     {
         Assertion::greaterThan($jws->countSignatures(), 0, 'The JWS does not contain any signature.');
     }
 
     /**
-     * @param \Jose\Object\JWKSetInterface $jwk_set
+     * @param \Jose\Objects\JWKSetInterface $jwk_set
      */
-    private function checkJWKSet(Object\JWKSetInterface $jwk_set)
+    private function checkJWKSet(Objects\JWKSetInterface $jwk_set)
     {
         Assertion::greaterThan($jwk_set->countKeys(), 0, 'There is no key in the key set.');
     }
 
     /**
-     * @param \Jose\Object\JWSInterface $jws
+     * @param \Jose\Objects\JWSInterface $jws
      * @param null|string               $detached_payload
      */
-    private function checkPayload(Object\JWSInterface $jws, $detached_payload = null)
+    private function checkPayload(Objects\JWSInterface $jws, $detached_payload = null)
     {
         Assertion::false(
             null !== $detached_payload && !empty($jws->getPayload()),
@@ -179,11 +179,11 @@ final class Verifier implements VerifierInterface
     }
 
     /**
-     * @param \Jose\Object\SignatureInterface $signature
+     * @param \Jose\Objects\SignatureInterface $signature
      *
      * @return \Jose\Algorithm\SignatureAlgorithmInterface
      */
-    private function getAlgorithm(Object\SignatureInterface $signature)
+    private function getAlgorithm(Objects\SignatureInterface $signature)
     {
         $complete_headers = array_merge(
             $signature->getProtectedHeaders(),

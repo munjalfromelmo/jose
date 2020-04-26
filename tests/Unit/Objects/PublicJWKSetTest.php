@@ -10,7 +10,7 @@
  */
 
 use Jose\Factory\JWKFactory;
-use Jose\Object\PublicJWKSet;
+use Jose\Objects\PublicJWKSet;
 
 /**
  * Class PublicJWKSetTest.
@@ -72,7 +72,7 @@ class PublicJWKSetTest extends \PHPUnit_Framework_TestCase
             4
         );
 
-        $jwksets = new \Jose\Object\JWKSets([$jwkset1, $jwkset2, $jwkset3]);
+        $jwksets = new \Jose\Objects\JWKSets([$jwkset1, $jwkset2, $jwkset3]);
         $public_jwkset = new PublicJWKSet($jwksets);
 
         $this->assertEquals(7, $public_jwkset->countKeys());

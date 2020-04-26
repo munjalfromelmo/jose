@@ -45,19 +45,19 @@ interface JWTLoaderInterface
 
     /**
      * @param string                            $assertion
-     * @param \Jose\Object\JWKSetInterface|null $encryption_key_set
+     * @param \Jose\Objects\JWKSetInterface|null $encryption_key_set
      * @param bool                              $is_encryption_required
      *
-     * @return \Jose\Object\JWSInterface
+     * @return \Jose\Objects\JWSInterface
      */
-    public function load($assertion, Object\JWKSetInterface $encryption_key_set = null, $is_encryption_required = false);
+    public function load($assertion, Objects\JWKSetInterface $encryption_key_set = null, $is_encryption_required = false);
 
     /**
-     * @param \Jose\Object\JWSInterface    $jws
-     * @param \Jose\Object\JWKSetInterface $signature_key_set
+     * @param \Jose\Objects\JWSInterface    $jws
+     * @param \Jose\Objects\JWKSetInterface $signature_key_set
      * @param string|null                  $detached_payload
      *
      * @return int
      */
-    public function verify(Object\JWSInterface $jws, Object\JWKSetInterface $signature_key_set, $detached_payload = null);
+    public function verify(Objects\JWSInterface $jws, Objects\JWKSetInterface $signature_key_set, $detached_payload = null);
 }

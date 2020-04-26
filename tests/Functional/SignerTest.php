@@ -11,9 +11,9 @@
 
 use Jose\Factory\JWSFactory;
 use Jose\Loader;
-use Jose\Object\JWK;
-use Jose\Object\JWKSet;
-use Jose\Object\JWSInterface;
+use Jose\Objects\JWK;
+use Jose\Objects\JWKSet;
+use Jose\Objects\JWSInterface;
 use Jose\Signer;
 use Jose\Test\TestCase;
 use Jose\Verifier;
@@ -699,7 +699,7 @@ class SignerTest extends TestCase
     }
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     protected function getKey1()
     {
@@ -712,7 +712,7 @@ class SignerTest extends TestCase
     }
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     protected function getKey2()
     {
@@ -734,7 +734,7 @@ class SignerTest extends TestCase
     }
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     protected function getKey3()
     {
@@ -752,7 +752,7 @@ class SignerTest extends TestCase
     }
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     protected function getKey4()
     {
@@ -774,7 +774,7 @@ class SignerTest extends TestCase
     }
 
     /**
-     * @return \Jose\Object\JWKInterface
+     * @return \Jose\Objects\JWKInterface
      */
     protected function getKey5()
     {
@@ -796,7 +796,7 @@ class SignerTest extends TestCase
     }
 
     /**
-     * @return \Jose\Object\JWKSetInterface
+     * @return \Jose\Objects\JWKSetInterface
      */
     protected function getKeyset()
     {

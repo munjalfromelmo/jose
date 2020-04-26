@@ -13,12 +13,12 @@ namespace Jose\Algorithm\Signature;
 
 use Assert\Assertion;
 use Base64Url\Base64Url;
-use FG\ASN1\Object;
+use FG\ASN1\ASNObject;
 use FG\ASN1\Universal\Integer;
 use FG\ASN1\Universal\Sequence;
 use Jose\Algorithm\SignatureAlgorithmInterface;
 use Jose\KeyConverter\ECKey;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 use Mdanter\Ecc\Crypto\Signature\Signature;
 use Mdanter\Ecc\EccFactory;
 use Mdanter\Ecc\Random\RandomGeneratorFactory;
@@ -44,7 +44,7 @@ abstract class ECDSA implements SignatureAlgorithmInterface
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $data
      *
      * @return string
@@ -56,7 +56,7 @@ abstract class ECDSA implements SignatureAlgorithmInterface
 
         Assertion::true($result, 'Signature failed');
 
-        $asn = Object::fromBinary($signature);
+        $asn = ASNObject::fromBinary($signature);
         Assertion::isInstanceOf($asn, Sequence::class, 'Invalid signature');
 
         $res = '';
@@ -69,7 +69,7 @@ abstract class ECDSA implements SignatureAlgorithmInterface
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $data
      *
      * @return string
@@ -118,7 +118,7 @@ abstract class ECDSA implements SignatureAlgorithmInterface
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $data
      * @param string                    $R
      * @param string                    $S
@@ -139,7 +139,7 @@ abstract class ECDSA implements SignatureAlgorithmInterface
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $data
      * @param string                    $R
      * @param string                    $S

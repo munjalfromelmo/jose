@@ -19,7 +19,7 @@ use FG\ASN1\Universal\NullObject;
 use FG\ASN1\Universal\ObjectIdentifier;
 use FG\ASN1\Universal\OctetString;
 use FG\ASN1\Universal\Sequence;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 use Jose\Util\BigInteger;
 
 final class RSAKey extends Sequence
@@ -65,7 +65,7 @@ final class RSAKey extends Sequence
     private $coefficient = null;
 
     /**
-     * @param \Jose\Object\JWKInterface|string|array $data
+     * @param \Jose\Objects\JWKInterface|string|array $data
      */
     public function __construct($data)
     {

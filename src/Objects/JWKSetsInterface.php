@@ -9,7 +9,7 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Object;
+namespace Jose\Objects;
 
 /**
  * Interface JWKSetsInterface.
@@ -17,7 +17,7 @@ namespace Jose\Object;
 interface JWKSetsInterface extends JWKSetInterface
 {
     /**
-     * @param \Jose\Object\JWKSetInterface $jwkset
+     * @param \Jose\Objects\JWKSetInterface $jwkset
      */
     public function addKeySet(JWKSetInterface $jwkset);
 }

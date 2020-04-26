@@ -11,8 +11,8 @@
 
 use Jose\Factory\CheckerManagerFactory;
 use Jose\Factory\JWSFactory;
-use Jose\Object\JWK;
-use Jose\Object\Signature;
+use Jose\Objects\JWK;
+use Jose\Objects\Signature;
 
 /**
  * Class JWSTest.

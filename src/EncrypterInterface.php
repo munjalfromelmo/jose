@@ -41,7 +41,7 @@ interface EncrypterInterface
     public function getSupportedCompressionMethods();
 
     /**
-     * @param \Jose\Object\JWEInterface $jwe
+     * @param \Jose\Objects\JWEInterface $jwe
      */
-    public function encrypt(Object\JWEInterface &$jwe);
+    public function encrypt(Objects\JWEInterface &$jwe);
 }

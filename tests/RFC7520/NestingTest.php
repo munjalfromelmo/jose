@@ -13,7 +13,7 @@ namespace Jose\Test\RFC7520;
 
 use Jose\Decrypter;
 use Jose\Loader;
-use Jose\Object\JWK;
+use Jose\Objects\JWK;
 use Jose\Verifier;
 
 /**

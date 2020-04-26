@@ -13,7 +13,7 @@ namespace Jose\Algorithm\KeyEncryption;
 
 use Assert\Assertion;
 use Base64Url\Base64Url;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 /**
  * Class AESKW.
@@ -51,7 +51,7 @@ abstract class AESKW implements KeyWrappingInterface
     }
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      */
     protected function checkKey(JWKInterface $key)
     {

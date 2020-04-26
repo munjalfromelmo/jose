@@ -15,25 +15,25 @@ use Assert\Assertion;
 use Base64Url\Base64Url;
 use Jose\Algorithm;
 use Jose\Compression;
-use Jose\Object;
+use Jose\Objects;
 
 trait EncrypterTrait
 {
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $usage
      *
-     * @throws \InvalidArgumentException
-     *
      * @return bool
+     *@throws \InvalidArgumentException
+     *
      */
-    abstract protected function checkKeyUsage(Object\JWKInterface $key, $usage);
+    abstract protected function checkKeyUsage(Objects\JWKInterface $key, $usage);
 
     /**
-     * @param \Jose\Object\JWKInterface $key
+     * @param \Jose\Objects\JWKInterface $key
      * @param string                    $algorithm
      */
-    abstract protected function checkKeyAlgorithm(Object\JWKInterface $key, $algorithm);
+    abstract protected function checkKeyAlgorithm(Objects\JWKInterface $key, $algorithm);
 
     /**
      * @return \Jose\Algorithm\JWAManagerInterface
@@ -48,9 +48,9 @@ trait EncrypterTrait
     /**
      * @param \Jose\Algorithm\KeyEncryptionAlgorithmInterface     $key_encryption_algorithm
      * @param \Jose\Algorithm\ContentEncryptionAlgorithmInterface $content_encryption_algorithm
-     * @param \Jose\Object\JWKInterface                           $recipient_key
+     * @param \Jose\Objects\JWKInterface                           $recipient_key
      */
-    private function checkKeys(Algorithm\KeyEncryptionAlgorithmInterface $key_encryption_algorithm, Algorithm\ContentEncryptionAlgorithmInterface $content_encryption_algorithm, Object\JWKInterface $recipient_key)
+    private function checkKeys(Algorithm\KeyEncryptionAlgorithmInterface $key_encryption_algorithm, Algorithm\ContentEncryptionAlgorithmInterface $content_encryption_algorithm, Objects\JWKInterface $recipient_key)
     {
         $this->checkKeyUsage($recipient_key, 'encryption');
         if ('dir' !== $key_encryption_algorithm->getAlgorithmName()) {
@@ -61,14 +61,14 @@ trait EncrypterTrait
     }
 
     /**
-     * @param \Jose\Object\JWEInterface                           $jwe
+     * @param \Jose\Objects\JWEInterface                           $jwe
      * @param \Jose\Algorithm\ContentEncryptionAlgorithmInterface $content_encryption_algorithm
      * @param string                                              $key_management_mode
      * @param array                                               $additional_headers
      *
      * @return string
      */
-    private function determineCEK(Object\JWEInterface $jwe, Algorithm\ContentEncryptionAlgorithmInterface $content_encryption_algorithm, $key_management_mode, array &$additional_headers)
+    private function determineCEK(Objects\JWEInterface $jwe, Algorithm\ContentEncryptionAlgorithmInterface $content_encryption_algorithm, $key_management_mode, array &$additional_headers)
     {
         switch ($key_management_mode) {
             case Algorithm\KeyEncryption\KeyEncryptionInterface::MODE_ENCRYPT:
@@ -92,11 +92,11 @@ trait EncrypterTrait
     }
 
     /**
-     * @param \Jose\Object\JWEInterface $jwe
+     * @param \Jose\Objects\JWEInterface $jwe
      *
      * @return string
      */
-    private function getKeyManagementMode(Object\JWEInterface $jwe)
+    private function getKeyManagementMode(Objects\JWEInterface $jwe)
     {
         $mode = null;
         $recipients = $jwe->getRecipients();
@@ -119,11 +119,11 @@ trait EncrypterTrait
     }
 
     /**
-     * @param \Jose\Object\JWEInterface $jwe
+     * @param \Jose\Objects\JWEInterface $jwe
      *
      * @return \Jose\Compression\CompressionInterface|null
      */
-    private function getCompressionMethod(Object\JWEInterface $jwe)
+    private function getCompressionMethod(Objects\JWEInterface $jwe)
     {
         $method = null;
         $nb_recipients = $jwe->countRecipients();
@@ -156,11 +156,11 @@ trait EncrypterTrait
     }
 
     /**
-     * @param \Jose\Object\JWEInterface $jwe
+     * @param \Jose\Objects\JWEInterface $jwe
      *
      * @return \Jose\Algorithm\ContentEncryptionAlgorithmInterface
      */
-    private function getContentEncryptionAlgorithm(Object\JWEInterface $jwe)
+    private function getContentEncryptionAlgorithm(Objects\JWEInterface $jwe)
     {
         $algorithm = null;
 

@@ -11,7 +11,7 @@
 
 use Jose\Factory\JWKFactory;
 use Jose\Loader;
-use Jose\Object\JWSInterface;
+use Jose\Objects\JWSInterface;
 
 /**
  * @group ForeignJWT

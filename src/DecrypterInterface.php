@@ -41,16 +41,16 @@ interface DecrypterInterface
     public function getSupportedCompressionMethods();
 
     /**
-     * @param \Jose\Object\JWEInterface $input           A JWE object to decrypt
-     * @param \Jose\Object\JWKInterface $jwk             The key used to decrypt the input
+     * @param \Jose\Objects\JWEInterface $input           A JWE object to decrypt
+     * @param \Jose\Objects\JWKInterface $jwk             The key used to decrypt the input
      * @param null|int                  $recipient_index If the JWE has been decrypted, an integer that represents the ID of the recipient is set
      */
-    public function decryptUsingKey(Object\JWEInterface &$input, Object\JWKInterface $jwk, &$recipient_index = null);
+    public function decryptUsingKey(Objects\JWEInterface &$input, Objects\JWKInterface $jwk, &$recipient_index = null);
 
     /**
-     * @param \Jose\Object\JWEInterface    $input           A JWE object to decrypt
-     * @param \Jose\Object\JWKSetInterface $jwk_set         The key set used to decrypt the input
+     * @param \Jose\Objects\JWEInterface    $input           A JWE object to decrypt
+     * @param \Jose\Objects\JWKSetInterface $jwk_set         The key set used to decrypt the input
      * @param null|int                     $recipient_index If the JWE has been decrypted, an integer that represents the ID of the recipient is set
      */
-    public function decryptUsingKeySet(Object\JWEInterface &$input, Object\JWKSetInterface $jwk_set, &$recipient_index = null);
+    public function decryptUsingKeySet(Objects\JWEInterface &$input, Objects\JWKSetInterface $jwk_set, &$recipient_index = null);
 }

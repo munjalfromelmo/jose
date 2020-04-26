@@ -14,7 +14,7 @@ namespace Jose\Algorithm\Signature;
 use Assert\Assertion;
 use Base64Url\Base64Url;
 use Jose\Algorithm\SignatureAlgorithmInterface;
-use Jose\Object\JWKInterface;
+use Jose\Objects\JWKInterface;
 
 /**
  * Class Ed25519.

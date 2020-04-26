@@ -10,7 +10,7 @@
  */
 
 use Jose\KeyConverter\KeyConverter;
-use Jose\Object\JWK;
+use Jose\Objects\JWK;
 
 /**
  * These tests will try to load certificates from PEM and DER files.
