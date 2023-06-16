@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#echo "Comment the exit line to create and push tags. Please confirm the tag numbers"
-#exit 0;
+echo "Comment the exit line to create and push tags. Please confirm the tag numbers"
+exit 0;
 
 majorVersion=6
 minorVersion=2
-patchVersion=1
+patchVersion=2
 
 newFullVersion=v$majorVersion.$minorVersion.$patchVersion
 
